@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Kanji Game</title>
+<link rel="stylesheet" type="text/css" href="stylesheets/practice.css" />
+<link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" />
+
+
+</head>
+
+<body>
+
+<header>
+	<div id = "navigation">
+		<div id ="logo">Kanji Corner</div>
+		<ul>
+			<li><a href = "matching-game.html">Home</a></li>
+			<li><a href = "languages.html">Language</a></li>
+			<li><a href = "about.html">About</a></li>
+		</ul>
+		
+	</div>
+	
+</header>
+	
+
+<div id = "outercontainer">
+	
+	<div id = "timer">60</div>
+	<div id = "gameoptions">
+		
+		<div id = "instructions">
+			You have 60 seconds to match the word in the blue box with the given options. Get the answer right and you'll get 3 more seconds. Get it wrong, you'll lose 5 seconds. Customize how your cards look and choose how you want the game to work!
+		</div>
+		
+		<div class = "label" ># of Cards</div><input type = "text" id = "cardnumber" onkeyup = "validate()" autofocus></input><br/><br/>
+		
+		<div class = "label" >Card Color</div><input type = "text" id = "cardcolor" ></input><br/><br/>
+		
+		<div class = "label" >Text Color</div><input type = "text" id = "textcolor" ></input><br/><br/>
+		
+		<div class = "label" >Card Info</div>
+		<select id = "qtype">
+			<option>English</option>
+			<option>Kanamoji</option>
+			<option>Kanji</option>
+		</select>
+		<div style = "float:left">to</div>
+		<select id = "atype">
+			<option>English</option>
+			<option>Kanamoji</option>
+			<option>Kanji</option>
+		</select><br/><br/><br/>
+		
+		<div id = "start" class = "center" value = "start" onclick = "cardnumber(),firstq(),clock()">Start</div>
+		
+		<!-- <div id = "save" onclick = "cardnumber()" >Save</div> -->
+	
+	</div>
+	
+	
+		
+
+	
+	<div id = "scoreholder">
+		
+		<div class = "scorebox">
+			<div class = "title">Best</div>
+			<div id = "highscore" class = "score">0</div>
+		</div>
+		
+		<div class = "scorebox right">
+			<div class = "title">Score</div>
+			<div id = "currentscore" class = "score">0</div>
+		</div>
+		
+	</div>
+	<div style = "clear:both;"></div>
+	
+	<div id = "question">週末</div>
+	
+	<br/>
+	
+	<div id = "outerarea">
+		
+	 	
+	 </div>	
+	
+
+</div>
+
+<br style = "clear:both"/>
+<footer>
+	<div id = "footermain">
+		Drew Terry
+	</div>
+	
+</footer>
+
+
+</div>
+
+<script src = "resources/jquery-2.0.3.min.js"></script>
+<script src = "js/matching.js"></script>
+
+
+
+</body>
+</html>

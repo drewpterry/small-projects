@@ -1,0 +1,152 @@
+#mainbox {
+	height:200px;
+	width:200px;
+	margin:auto;
+	//margin-top:-20px;
+	//left:50%;
+	//margin-left:-100px;
+	border-style:solid;
+}
+
+#intro {
+	
+	//margin-left:80%;
+	height:50px;
+	top:40%;
+	background-color:black;
+	text-align:center;
+	//line-height:50px;
+	//display:table-cell;
+	//vertical-align:middle;
+	color:white;
+	
+}
+
+
+
+.phrase {
+	
+	text-align:center;
+	width:100%;
+	font-size:1.3em;
+	float:left;
+	line-height:50px;
+	  
+}
+
+.phrase2 {
+	text-align:center;
+	//height:100px;
+	width:100%;
+	font-size:1.3em;
+	float:left;
+}
+
+#transform {
+	width:70%;
+	left:50%;
+	top:40%;
+	margin-left:-35%;
+	text-align:center;
+	font-size:150%;
+	z-index:101;
+	.transform-origin(50%, 50%);
+	//border-style:solid;
+	color:white;
+}
+
+#bg1 {
+	z-index:50;
+		top:0;
+		left:0;
+		width:100%;
+		height:100%;
+		background: url('../images/wave.png');
+		//background-size: 100% 100%;
+		
+}
+
+
+
+//#bg2 {
+	z-index:49;
+	width:100px;
+	height:400px;
+	background: url('../images/aibo.png');
+}
+
+#japan {
+	width:100%;
+	height:115%;
+	//background-color:green;
+	z-index:99;
+	background-image: url('../images/sun.png');
+	background-size:100%;
+	//background-position:0px -200px;
+}
+
+#fuji {
+	width:55%;
+	margin-left:50%;
+	
+}
+
+#kanjioverload {
+	width:100%;
+	height:100%;
+	z-index:51;
+	background-color:white;
+}
+
+#kanji1{
+	top:30%;
+	z-index:99;
+}
+
+#kanji2{
+	top:80%;
+	height:100px;
+}
+
+#kanji3{
+	top:20%;
+	height:80px;
+	z-index:99;
+}
+
+#kanji4{
+	top:0%;
+	height:100px;
+}
+
+#kanji5{
+	top:45%;
+	z-index:99;
+}
+
+#curtain {
+	width:100%;
+	height:100%;
+	background-color:black;
+	z-index:99;
+}
+
+#end {
+	height:50px;
+	width:20%;
+	margin-left:40%;
+	margin-top:20%;
+	color:white;
+	background-color:rgba(88, 211, 247, 1);
+	text-align:center;
+	line-height:50px;
+	//cursor:pointer;
+	z-index:1000;
+	text-decoration:none;
+}
+
+
+
+
+
+

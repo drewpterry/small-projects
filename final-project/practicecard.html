@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Card Practice</title>
+<link rel="stylesheet" type="text/css" href="stylesheets/practice.css" />
+
+
+</head>
+
+<body>
+
+<header>
+	<div id = "navigation">
+		<div id ="logo">Kanji Corner</div>
+		<ul>
+			<li><a href = "matching-game.html">Home</a></li>
+			<li><a href = "languages.html">Language</a></li>
+			<li><a href = "about.html">About</a></li>
+		</ul>
+		
+	</div>
+	
+</header>
+	
+
+<div id = "outercontainer">
+	
+	<div id = "unanswered" class = "sidebar">
+		<div class = "preview">neko</div>
+		<div class = "preview">neko</div>
+	</div>
+	
+	<div id = "middle">
+		<div id = "scoreholder">
+		
+			<div class = "scorebox">
+				<div class = "title">Remaining</div>
+				<div id = "highscore" class = "score">0</div>
+			</div>
+		
+			<div class = "scorebox right">
+				<div class = "title">Trouble Words</div>
+				<div id = "currentscore" class = "score">0</div>
+			</div>
+		
+		</div>
+		
+		<div id = "answerbox">
+			<div class = "flipper">
+				<div id = "front"></div>
+				<div id = "back"></div>
+			</div>
+		</div>
+		
+		
+		<input type = "text" id = "answerinput" autofocus></input>
+		<!-- <div id = "result">X</div> -->
+	</div>
+	
+	<div id = "answered" class = "sidebar"></div>
+	
+</div>
+
+<br style = "clear:both"/>
+<footer>
+	<div id = "footermain">
+		Drew Terry
+	</div>
+	
+</footer>
+
+
+</div>
+
+<script src = "resources/jquery-2.0.3.min.js"></script>
+
+<script src = "js/practicecard.js"></script>
+
+
+</body>
+</html>
