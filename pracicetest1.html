@@ -1,0 +1,83 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<link href="colorgallery.css" rel="stylesheet" type="text/css" />
+
+<title>COlor gallery</title>
+
+
+<!-- Link your jQuery Library first -->
+<script src="jquery-2.0.3.min.js"></script>
+
+<!-- Write your jQuery in the following script block -->
+<script>
+	
+		$(document).ready(function(){
+			
+			
+			
+	
+		});
+		
+		
+	var color = [];	var picture = []; var phrase = [];
+	color[0] = "blue"; picture[0] = "blue2.jpg" ; phrase [0] = "The Sky is blue";
+	color[1] = "red"; picture[1] = "red.jpg" ; phrase [1] = "red red";
+	color[2] = "yellow"; picture[2] = "yellow.jpg" ; phrase [2] = "the yellowness";
+	color[3] = "green"; picture[3] = "green.jpg" ; phrase [3] = "gree green";
+	color[4] = "gray"; picture[4] = "gray.gif" ; phrase [4] = "this is gray";
+	
+	var imglink = "http://webdev.usc.edu/itp204/lab_files/colors/"
+	
+	
+	
+	var randphoto = function(){
+		
+		randnum = Math.floor(Math.random()*5);
+		
+		document.body.style.backgroundColor = color[randnum];
+		document.getElementById('gallery').innerHTML = "<img src ='" + imglink + picture[randnum] + "' class = 'thumbnail' onclick = 'randphoto()'/><br/> <div>" + phrase[randnum] + "</div>"
+		;
+		
+		if(randnum == 4){
+			alert("this is grey");
+		}
+		
+	}
+	
+</script>
+<style>
+	
+</style>
+</head>
+
+<body>
+	<div id = "outercontainer">
+		
+		<h1>color picker</h1>
+		<div id = "gallery">
+			
+				
+				
+				
+				
+			
+			
+		</div>
+		<div><button onclick = "randphoto()">this is a button</button></div>
+		
+		
+		
+		
+		
+		<br style = "clear:both">
+	</div>	
+</body>
+<script language = "javascript">
+randphoto();
+</script>
+
+</html>

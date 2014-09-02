@@ -1,0 +1,96 @@
+<html>
+<head>
+
+<script language="javascript">
+
+// The following function receives three pieces of data (properties from an image) and displays their value in an alert box along with string data
+
+
+// The following function receives an entire image OBJECT and extras values from different properties of that image, and then displays them (along with string data) in an alert box
+
+
+
+// make an image larger by a factor of 2
+var imagebig = function(obj1)
+{
+// receive objeect
+var picH = parseFloat(obj1.style.height);
+var picW = parseFloat(obj1.style.width);
+// read its width and height properties
+
+alert(picH + "   " + picW);
+
+obj1.style.height = picH * 2 + "px";
+obj1.style.width = picW * 2 + "px";
+// set its width to current width * 2
+
+// set its height to current height * 2
+
+
+
+}
+
+// Take the text from the text box and bring up an elert that greets that name
+// Note to display the concept of string versus variable that the difference between the two alerts below
+var checkage = function (){
+	
+	var age = parseFloat(document.getElementById('age').value);
+	
+	if (age<16){
+		alert("you cant drive yet or buy alcohol");
+	}else if(age <21){
+		alert("you CAN drive now but cant buy alcohol");
+	} else{
+		alert("do whatever you want");
+	}
+	
+	
+}
+var checkage2 = function (){
+	
+	var age = parseFloat(document.getElementById('age').value);
+	if(age < 16){
+		alert("you cant drive and and cant buy");
+	}
+	if(age >= 16 && age<=21){
+		alert("you can drive but not buy")
+	}
+	if(age > 21){
+		alert("yaya");
+	}
+	
+	
+}
+
+</script>
+
+</head>
+<body>
+<script>
+</script>
+
+<!--
+Note that the JS in the first image uses the document.objname technique whereas the JS in the second image uses the document.GetElementById method to "locate" the object and pass it along to the function
+-->
+
+Click picture for more details: 
+<img src="funny_cartoon.jpg"  style="width:70px; height:67px; border: solid 1px black" id="mypic1"  onclick= "imagebig(document.getElementById('mypic1'))"/>
+<br> <br />
+Click picture to enlarge: 
+<img src="funny_cartoon_2.jpg" style="width:70px; height:67px; border: solid 1px black" id="mypic2" onclick= ""  />
+
+
+<span onclick="" >click this text to for more info</span>
+<form name="f1">
+
+<br> <br>
+Your name:
+<input type="text" name="t1" id="t1">
+<input type ="text" name ="age" id="age">
+<br>
+<input type="button" value="Check Age" onclick="checkage2()">
+</form>
+
+
+</body>
+</html>

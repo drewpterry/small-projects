@@ -1,0 +1,114 @@
+<!doctype html>
+<html>
+<head>
+	 <title>ITP Bakery</title>
+<style>
+    #outercontainer {
+        width: 1000px;
+        height: 650px;
+        margin: auto;
+		position:relative;
+    }
+    
+    #header {
+        background-image: url(../banners/cake-banner-3.jpg);
+        width: 1000px;
+        height: 100px;
+    }
+    
+    #body {
+        background-image: url(page2-background-blank.jpg);
+        width: 1000px;
+        height: 550px;
+        border: 2px solid black;
+    }
+	
+	#bowl {
+		position:absolute;
+		left:200px;
+		bottom:30px;
+	}
+	
+	#pan {
+		position:absolute;
+		right:200px;
+		bottom:30px;
+	}
+	
+	#oven {
+		width:365px;
+		height:350px;
+		position:absolute;
+		right:5px;
+		top:120px;
+		//border-style:solid;
+		
+	}
+	
+	#light {
+		position:relative;
+		left:8px;
+		top:6px;
+	}
+</style>
+   
+	<script src="../js/jquery-1.10.2.js"></script>
+	<script src="../js/jquery-ui-1.10.4.custom.js"></script>
+	
+</head>
+<body>
+    <div id="outercontainer">
+        <div id="header"></div>
+        <div id="body">
+			<div id = "oven">
+				<img id = "light" src = "redlight.gif"/>
+			</div>
+			<img id = "bowl" src = "bowl-full.png"/>
+			<img id = "pan" src = "pan-empty.png"/>
+            
+        </div>
+    </div>
+	
+	<script>
+	
+	$("#light").hide();
+	
+	$("#bowl").draggable({
+		revert: true
+	});
+	
+	//var panfull = false;
+	
+	$("#pan").draggable().droppable({
+		drop: function(event,ui){
+			$(ui.draggable).attr("src", "bowl-empty.png");
+			$(this).attr("src", "pan-full.png");
+			//panfull = true;
+			$("#oven").droppable("option","disabled", false);
+			
+		}
+	});
+	
+	
+		
+	$("#oven").droppable({
+		disabled: true,
+		accept: "#pan",
+		drop: function(event,ui){
+		$("#light").show();	
+		$("#pan").attr("src","pan-empty.png");
+		}
+	});
+		
+	
+	
+	
+	
+
+	
+	
+	
+	</script>
+	
+</body>
+</html>

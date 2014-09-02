@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<title>jQuery Data Page</title>
+<link href="jquery-data.css" rel="stylesheet" type="text/css" />
+
+<script language="javascript">
+	<!--
+	/*
+	<body>
+	<div style="display: block; font-family: Verdana, Geneva, Arial; font-size: 10px">
+The University of Southern California does not screen or control the content on this website and thus does not guarantee the accuracy, integrity, or quality of such content.  All content on this website is provided by and is the sole responsibility of the person from which such content originated, and such content does not necessarily reflect the opinions of the University administration or the Board of Trustees
+</div>
+</body>
+	</html>
+	*/
+	-->
+</script>
+<!-- Link your jQuery Library first -->
+<script src="jquery-2.0.3.min.js"></script>
+
+<!-- Write your jQuery in the following script block -->
+<script language = "javascript">
+
+
+var kanjiimg = [];         
+var meaning = [];        
+var onread = [];       
+var kunread = []; 
+var strokes = [];      
+
+kanjiimg[0] = "mizu.jpeg";		meaning[0] = "Water; Wednesday" ;	onread[0] = "mizu" ;	kunread[0] = "sui"; strokes[0] = "4";
+kanjiimg[1] = "yama.jpeg";	meaning[1] = "mountain, peak" ; 	onread[1] = "san" ; 		kunread[1] = "yama"; strokes[1] = "3";
+kanjiimg[2] = "fire.jpeg" ;		meaning[2] = "fire; Tuesday" ;	onread[2] = "ka" ;		kunread[2] = "hi, ~bi"; strokes[2] = "4";
+kanjiimg[3] = "iku.jpeg" ;		meaning[3] = "to go; to act; line" ;	onread[3] = "kou, gyou" ;		kunread[3] = "i, okona"; strokes[3] = "6";
+kanjiimg[4] = "umbrella.jpeg" ;		meaning[4] = "umbrella" ;	onread[4] = "san" ;		kunread[4] = "kasa"; strokes[4] = "12";
+	
+var currentrecord = 0
+	
+		$(document).ready(function(){
+			
+			$("#confirmation").hide();
+			
+			$("#next").on("click",function(){
+				$("#infocard").fadeOut(500,function(){
+					
+					if(currentrecord == meaning.length - 1){
+						currentrecord = 0;
+					}else{
+					currentrecord = currentrecord + 1;}
+					
+					$("img").attr("src",kanjiimg[currentrecord]);
+					$("#meaning").html(meaning[currentrecord]);
+					$("#onreading").html(onread[currentrecord]);
+					$("#kunreading").html(kunread[currentrecord]);
+					$("#strokes").html(strokes[currentrecord]);
+				
+					$("#infocard").fadeIn(500);
+					
+				});
+					
+			});
+				
+				
+			
+			$("#previous").on("click",function(){
+				$("#infocard").fadeOut(500,function(){
+					if(currentrecord == 0){
+						currentrecord = meaning.length - 1
+					}else{
+					currentrecord = currentrecord - 1;}
+					
+					$("img").attr("src",kanjiimg[currentrecord]);
+					$("#meaning").html(meaning[currentrecord]);
+					$("#onreading").html(onread[currentrecord]);
+					$("#kunreading").html(kunread[currentrecord]);
+					$("#strokes").html(strokes[currentrecord]);
+				
+					$("#infocard").fadeIn(500);
+				});
+			});
+			
+			$("#addnew").on("click",function(){
+				meaning.push($("#addmeaning").val());
+				kanjiimg.push($("#addurl").val());
+				onread.push($("#addonreading").val());
+				kunread.push($("#addkunreading").val());
+				strokes.push($("#addstrokes").val());
+				
+				document.getElementById('addmeaning').value = '';
+				document.getElementById('addurl').value = '';
+				document.getElementById('addonreading').value = '';
+				document.getElementById('addkunreading').value = '';
+				document.getElementById('addstrokes').value = '';
+				
+				$("#confirmation").fadeIn(500, function(){
+					$("#confirmation").delay(2000).fadeOut(1000);
+					
+				});
+				
+			});
+			
+		});
+	
+	
+</script>
+<style>
+	
+	
+</style>
+</head>
+
+<body>
+
+
+	<div id = "outercontainer">
+		<div id = "infocard">
+			<img src = "mizu.jpeg"/>
+			<div id = "info">
+				<ul>
+					<li>Meaning: <span id = "meaning" class = "information">Water; Wednesday</span></li>
+					<li>On Reading: <span id = "onreading" class = "information"> mizu</span></li>
+					<li>Kun Reading: <span id = "kunreading" class = "information">sui</span></li>
+					<li># of Strokes: <span id = "strokes" class = "information">4</span></li>
+					
+					<button id = "previous" class = "button">Previous</button>
+					<button id = "next" class = "button">Next</button>
+				
+				</ul>
+			</div>
+		</div>
+		
+		<div id = "infocard">
+			<div id = "addstuff">
+				<span class = "label">Meaning</span><input type = "text" id = "addmeaning" name = "meaning"></input></br></br>
+				<span class = "label">On Reading</span><input type = "text" id = "addonreading" name = "onreading"></input></br></br>
+				<span class = "label">Kun Reading</span><input type = "text" id = "addkunreading" name = "kunreading"></input></br></br>
+				<span class = "label"># of Strokes</span><input type = "text" id = "addstrokes" name = "strokes"></input></br></br>
+				<span class = "label">Image URL</span><input type = "text" id = "addurl" name = "url"></input></br></br>
+				<button id = "addnew" style = "margin-left:100px">Add new entry</button>
+			</div>
+			<div id = "confirmation">
+				<p>New entry added!</p>
+			<div/>
+		</div>
+		
+		
+	</div>
+
+
+</body>
+</html>

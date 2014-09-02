@@ -1,0 +1,70 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<title>Restructure Lab</title>
+	<link href = "restructure.css" rel = "stylesheet" type = "text/css"/>
+	<style>
+	
+	</style>
+	
+	<script language = "javascript">
+	
+	var check = function(number){
+		
+		
+		number.value = number.value.replace(/[^0-9]+/g,"");
+		
+		// var shortnum = number.value;
+// 		shortnum = shortnum.replace(/ /g,"");
+// 		shortnum = shortnum.replace(/,/g,"");
+// 		shortnum = shortnum.replace(/\./g,"");
+// 		shortnum = shortnum.replace(/\\/g,"");
+// 		shortnum = shortnum.replace(/\+/g,"");
+// 		shortnum = shortnum.replace(/\-/g,"");
+// 		
+// 		number.value = shortnum;
+		
+		//alert("work");
+		
+	}
+	
+	var changenumber = function(){
+		
+		if(document.getElementById('phone').value.length != 10){
+			
+			alert("Please enter a valid 10 digit number.")
+			
+		}else{
+			
+		var number = document.getElementById('phone').value	
+			var areacode = number.substring(0,3);
+			var three = number.substring(3,6);
+			var four = number.substring(6,10);
+			
+			document.getElementById('phone').value = "("+ areacode + ")" + three + "-" + four; 
+			
+		}
+		
+		
+	}
+	
+	
+	</script>
+	
+</head>
+<body>
+	
+	<form>
+		
+		<input type = "text" name = "firstname" placeholder = "First Name" autofocus></br>
+		<input type = "text" name = "lastname" placeholder = "Last Name"></br>
+		<input type = "text" name = "email" placeholder = "Email Address"></br>
+		<input type = "text" name = "phone" id = "phone" placeholder = "Phone Number" onkeyup = "check(document.getElementById('phone'))" onblur = "changenumber()"></br>
+		<input type = "submit" name = "submit" value = "Go" ></br>
+		<submit>
+		
+	</form>
+	
+</body>
+
+</html>

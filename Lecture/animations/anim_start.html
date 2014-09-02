@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Animate</title>
+    <script src="http://code.jquery.com/jquery-1.11.0.js"></script>
+	<script src = "jquery-ui.js"></script>
+    <script>
+        $(document).ready(function(){
+			$("#box1").css({
+				width: "300px",
+				height: "400px",
+				fontSize: "20px",
+				border: "2px solid red",
+				"margin-left": "100px"
+			});
+		//aimate (css, milliseconds, easing)	
+			$("#box2").animate({
+				width: "300px",
+				height: "400px",
+				fontSize: "20px",
+				borderWidth: "2px",
+				left: "120px",
+				backgroundColor: "purple"
+			},2000, "linear", function(){
+				alert("finished");
+			});
+			
+        });
+    </script>
+
+    <style>
+        .box{
+            background-color: yellow;
+            width:100px;
+            height:100px;
+            font-size: 12pt;
+            color:teal;
+            border:1px solid red;
+        }
+        #box2{
+            position:absolute;
+            top:300px;
+            left:20px
+        }
+    </style>
+</head>
+
+<body>
+<div id="box1" class="box">
+    Box1
+</div>
+
+<div id="box2" class="box">
+    Box2
+</div>
+</body>
+</html>
+
+
+

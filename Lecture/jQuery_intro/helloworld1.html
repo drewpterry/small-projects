@@ -1,0 +1,83 @@
+<html>
+<head>
+<title>Hello World Revisited</title>
+<style>
+
+pre {
+	background-color:#CCC;	
+}
+
+.redbox {
+	border: 1px solid red;
+	padding: 10px;	
+}
+
+.largetext {
+	font-size: 24pt;
+}
+
+.greenonyellow {
+	color:#063;
+	background-color: yellow;
+}
+
+</style>
+<script src = "jquery-2.0.3.min.js"></script>
+<script>
+	
+	jQuery(document).ready(function(){
+		
+		
+		$("li a").css({
+			
+			"color":"oragnge",
+			"font-size":"24px"
+		});
+		
+	});
+	
+</script>
+
+
+</head>
+
+<body>
+
+<h1>Hello World</h1>
+
+<p>This is a basic html page.</p>
+
+<p id="secondp">Perhaps we need some basic links?</p>
+
+Unordered list of links:
+	<ul id="links">
+	<li> <a href="http://www.w3schools.com">W3Schools</a> </li>
+	<li> <a href="http://docs.jquery.com">docs.jquery.com</a> </li>
+	<li> <a href="http://webdev.usc.edu">Webdev</a> </li>
+	</ul>
+    
+<p>This page also has in its head a style block that defined the following styles, with NONE of the classes hooked up to any objects:</p>
+<pre>
+
+
+pre {
+	background-color:#CCC;	
+}
+
+.redbox {
+	border: 1px solid red;
+	padding: 10px;	
+}
+
+.largetext {
+	font-size: 24pt;
+}
+
+.greenonyellow {
+	color:#063;
+	background-color: yellow;
+	font-size: 12pt;	
+}
+</pre>
+</body>
+</html>

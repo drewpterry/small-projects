@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>Photo Gallery</title>
+	<link href="photogallery.css" rel="stylesheet" type="text/css" />
+	
+	<style>
+	
+	
+	
+	</style>
+	
+	
+
+	<!-- <script src="jquery-2.0.3.min.js"></script> -->
+	<script>
+	   
+	var picPaths = []; var photoheight = []; var photowidth = []; var captions = [];
+	picPaths[0] = "images/photo1.jpg"; photoheight[0] = "50px"; photowidth[0] = "50px";  captions[0] = "Thanking our unnoficial tour guide.";
+	picPaths[1] = "images/photo2.jpg"; photoheight[1] = "50px"; photowidth[1] = "50px";  captions[1] = "Monica Lam at a Hong Kong tech talk.";
+	picPaths[2] = "images/photo3.jpg"; photoheight[2] = "100px"; photowidth[2] = "100px";  captions[2] = "Taipei.";
+	picPaths[3] = "images/photo4.jpg"; photoheight[3] = "300px"; photowidth[3] = "300px";  captions[3] = "Japanese temple";
+	picPaths[4] = "images/photo5.jpg"; photoheight[4] = "150px"; photowidth[4] = "150px";  captions[4] = "Raw shrimp sushi.";
+	picPaths[5] = "images/photo6.jpg"; photoheight[5] = "350px"; photowidth[5] = "350px";  captions[5] = "1 of 10,000 Buddhas.";
+	picPaths[6] = "images/photo7.jpg"; photoheight[6] = "53px"; photowidth[6] = "35px";  captions[6] = "I don't even remember.";
+	picPaths[7] = "images/photo8.jpg"; photoheight[7] = "75px"; photowidth[7] = "75px";  captions[7] = "Thailand garlic fish.";
+	picPaths[8] = "images/photo9.jpg"; photoheight[8] = "200px"; photowidth[8] = "200px";  captions[8] = "Chinese New Year in Hong Kong.";
+	picPaths[9] = "images/photo10.jpg"; photoheight[9] = "200px"; photowidth[9] = "200px";  captions[9] = "The Great Wall.";
+	
+	
+	var randomPhoto = function(){
+		randNumber = Math.floor(Math.random() * 10);
+		
+		
+		document.getElementById('mainphoto').src = picPaths[randNumber];
+		document.getElementById('mainphoto').style.cssText += 'height:' + photoheight[randNumber] + '; width:' + photowidth[randNumber]; 
+		document.getElementById('picturecaption').innerHTML = captions[randNumber];
+		
+		//width:photowidth[randNumber]';
+		//document.getElementById('mainphoto').style.height = photoheight[randNumber];
+		//console.log(randNumber);
+		
+			
+	}
+	
+	
+	
+	
+	   
+	</script>   
+
+	
+</head>
+
+
+<body>
+	
+	<div id = "outercontainer">
+		<header>Travel Photo Gallery</header>
+		
+		<div id = "content">
+			<figure>
+			<img id = "mainphoto" src = "images/photo1.jpg"/>
+			<figcaption id = "picturecaption">This is the main photo.</figcaption>
+			</figure>
+				
+		</div>
+		
+		<div style = "text-align:center; margin-bottom:10px;">
+		<button type = "button" id = "randobutton" onclick = "randomPhoto()">Random Picture</button>
+		</div>
+		
+		<div id = "gallery">
+			<img class = "thumbnail" src = "images/photo1.jpg"/>
+			<img class = "thumbnail" src = "images/photo2.jpg"/>
+			<img class = "thumbnail" src = "images/photo3.jpg"/>
+			<img class = "thumbnail" src = "images/photo4.jpg"/>
+			<img class = "thumbnail" src = "images/photo5.jpg"/>
+			<img class = "thumbnail" src = "images/photo6.jpg"/>
+			<img class = "thumbnail" src = "images/photo7.jpg"/>
+			<img class = "thumbnail" src = "images/photo8.jpg"/>
+			<img class = "thumbnail" src = "images/photo9.jpg"/>
+			<img class = "thumbnail" src = "images/photo10.jpg"/>
+			<br style = "clear:both;">
+		</div>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+</body>
+</html>

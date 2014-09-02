@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+	
+	<title>JSON Example</title>
+</head>
+
+<body>
+	
+	<div id = "content">
+	</div>
+	
+</body>
+	
+	<script type = "text/javascript">
+	
+	// var obj1 = {
+// 		name: "Drew",
+// 		age: 22,
+// 		major: "Business"
+// 	};
+// 	
+// 	var obj2 = {
+// 		name: "Bo",
+// 		age: 23,
+// 		major: "CS"
+// 	};
+// 	
+// 	var obj3 = {
+// 		name: "Zune",
+// 		age: 23,
+// 		major: "CECS"
+// 	};
+// 	
+// 	var obj4 = {
+// 		name: "Brynne",
+// 		age: 20,
+// 		major: "Kinesiology"
+// 	};
+// 	
+// 	var obj4 = {
+// 		person1: obj1,
+// 		person2: obj2,
+// 		person3: obj3,
+// 		person4: obj4,
+// 	}
+// 	
+// 	var sports = ["football", "soccer", "hockey"];
+// 	
+// 	var obj5 {
+// 		person:obj3,
+// 		array: sports
+// 	};
+// 	
+// 	var john = {
+// 		name: "john",
+// 		interests: ["sports", "web dev"]
+// 	};
+// 	
+// 	function getInfo(person){
+// 		person.name;
+// 	}
+// 	
+// 	getInfo({name: "Zune", age: 23, major: "CECS"})
+	
+	// console.log(obj2.name);
+// 	console.log(obj2["name"]);
+// 	
+// 	document.getElementById("content").innerHTML = obj2.name + " is " + obj2.age + " years old and majors in " + obj2.major;
+// 	
+// 	obj2.age = 19;
+// 	
+// 	document.getElementById("content").innerHTML += "<hr/>";
+// 	
+// 	document.getElementById("content").innerHTML += obj2.name + " is " + obj2.age + " years old and majors in " + obj2.major;
+// 	
+// 	
+// 	console.log(obj4);
+// 	document.getElementById("content").innerHTML = obj4.person3.name
+	
+	function myFunction (data){
+		console.log(data);
+		document.getElementById("content").innerHTML = data.id;
+		document.getElementById("content").innerHTML += "<hr/>";
+		document.getElementById("content").innerHTML += "<img src ='" + data.cover.source + "'/>";
+	}
+	
+	var username = prompt("Enter username");
+	
+	//create dynamic script tag in head
+	var script = document.createElement('script');
+	script.src = "https://graph.facebook.com/" + username + "?callback=myFunction";
+	//grab first header tag
+	document.getElementsByTagName('head')[0].appendChild(script);
+	
+	</script>
+	<!-- // <script src = "https://graph.facebook.com/usc?callback=myFunction"></script> -->
+	
+	<!-- //myFunction({id:4321, about:"text"}) -->
+	
+	
+</html>

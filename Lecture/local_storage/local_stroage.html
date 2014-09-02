@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Local Storage Example</title>
+</head>
+
+<body>
+<form id="signup">
+    <label for="firstname">First Name</label>
+    <input type="text" name="firstname" id="firstname"><br>
+    <label for="lastname">Last Name:</label>
+    <input type="text" name="lastname" id="lastname"><br>
+    <label for="shortbio">Short bio:</label>
+    <textarea id="shortbio" name="shortbio"></textarea><br>
+    <input type="submit" id="submit">
+    <input type="reset" id="reset" value="Reset">
+</form>
+</body>
+
+<script>
+
+// localStorage.setItem("age",25);
+// localStorage.setItem("firstname", "Yuanbo");
+// localStorage.setItem("lastname", "Wang");
+// 
+// localStorage.removeItem("firstname");
+// localStorage.clear();
+
+document.getElementById('firstname').value = localStorage.getItem('firstname');
+document.getElementById('shortbio').value = localStorage.getItem('shortbio');
+document.getElementById('firstname').onkeyup = function(){
+	var content = document.getElementById('firstname').value;
+	localStorage.setItem("firstname", content);
+	
+}
+
+document.getElementById("shortbio").onkeyup = function(){
+	var content = document.getElementById('shortbio').value;
+	localStorage.setItem("shortbio",content);
+	
+}
+
+document.getElementById('reset').onclick = function(){
+	localStorage.clear();
+}
+
+//localStorage.setItem("age",25);
+var age = localStorage.getItem("age");
+age = parseFloat(age) + 1;
+console.log(age);
+localStorage.setItem("age",age);
+
+
+</script>
+</html>

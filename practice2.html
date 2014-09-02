@@ -1,0 +1,138 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<link href="colorgallery.css" rel="stylesheet" type="text/css" />
+
+<title>Picture add</title>
+
+<style>
+
+#picturearea {
+	position:relative;
+	border-color:purple;
+	border-style:solid;
+	height:auto;
+	width:400px;
+	text-align:center;
+	color:blue;
+	
+}
+
+hr {
+	color:yellow;
+	height:5px;
+	background-color:yellow;
+	border-style:none;
+	width:80%;
+}
+
+#addpic {
+	position:relative;
+	border-style:solid;
+	height:200px;
+	width:200px;
+	text-align:center;
+	top:0px;
+}
+
+img {
+	height:50px;
+	
+}
+
+</style>
+<!-- Link your jQuery Library first -->
+<script src="jquery-2.0.3.min.js"></script>
+
+<!-- Write your jQuery in the following script block -->
+<script>
+	
+		
+				
+			
+var url = [];
+	url[0] = "http://webdev.usc.edu/itp301/dogs/dogs05_s.jpg";
+	
+		
+			var cw = document.documentElement.clientWidth;
+			var ch = document.documentElement.clientHeight;
+			
+		
+		
+			var center = function(){
+			
+			document.getElementById('picturearea').style.left = (cw - $("#picturearea").width())/2 + "px";
+			document.getElementById('addpic').style.left = cw/2 - $("#addpic").width()/2 +"px";
+			}
+			
+			
+			
+
+		$(document).ready(function(){
+			$("#add").on("click",function (){
+				url.push($("#newimage").val());
+				var content = "";
+				for(var i = 0; i < url.length; i++){
+					
+					content = content + "<img src = '"+ url[i] + "'/>" ;
+				};
+				
+				document.getElementById('pictures').innerHTML = content;
+				console.log(content);
+				
+				var top = $("#addpic").css("top");
+				$("#addpic").css("top", parseFloat(top) +100 + "px");
+				
+			});
+			
+			
+			
+		});
+			
+			// var newpic = function(toppos){
+// 				
+// 				url.push(document.getElementById('newimage').value);
+// 				var content = "";
+// 				for(var i = 0; i < url.length; i++){
+// 					
+// 					content = content + "<img src = '"+ url[i] + "'/>" ;
+// 				};
+// 				
+// 				document.getElementById('pictures').innerHTML = content;
+// 				console.log(content);
+// 				
+// 			}
+			
+
+		
+</script>
+<style>
+	
+</style>
+</head>
+
+<body>
+	<div id = "picturearea">
+		<h1>Photos</h1>
+		<hr/>
+		<div id = "pictures">
+			<img src = "http://webdev.usc.edu/itp301/dogs/dogs05_s.jpg"/>
+		</div>
+	</div>
+	<br/>
+	
+	<div id = "addpic">
+		<h2>Add image</h2>
+		<input id = "newimage" type = "text"></input> <button id = "add" onclick = "newpic(document.getElementById('addpic'))" >add</button>
+		
+	</div>
+		
+</body>
+<script language = "javascript">
+center();
+</script>
+
+</html>

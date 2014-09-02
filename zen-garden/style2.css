@@ -1,0 +1,271 @@
+/* css Zen Garden default style v1.02 */
+/* css released under Creative Commons License - http://creativecommons.org/licenses/by-nc-sa/1.0/  */
+
+/* This file based on 'Tranquille' by Dave Shea */
+/* You may use this file as a foundation for any new work, but you may find it easier to start from scratch. */
+/* Not all elements are defined in this file, so you'll most likely want to refer to the xhtml as well. */
+
+/* Your images should be linked as if the CSS file sits in the same folder as the images. ie. no paths. */
+
+
+/* basic elements */
+html {
+	margin: 0;
+	padding: 0;
+	height: 1000px;
+	}
+	
+body { 
+	font: 75% georgia, sans-serif;
+	line-height: 1.88889;
+	color: #555753; 
+	background-color: black; 
+	margin: 0; 
+	padding: 0;
+	
+	}
+
+//p h3 {
+		
+	width:40%;
+	}
+	
+p { 
+	margin-top: 0; 
+	text-align: justify;
+	width:65%;
+	
+	}
+	
+h3 { 
+	width:65%;
+	font: italic normal 1.4em georgia, sans-serif;
+	letter-spacing: 1px; 
+	margin-bottom: 0; 
+	color: black;
+	background-color:black;
+	font-weight: bold;
+	border-radius:5px;
+	text-align:center;
+	color:white;
+	
+	}
+	
+a:link { 
+	font-weight: bold; 
+	text-decoration: none; 
+	color: black;
+	}
+	
+a:visited { 
+	font-weight: bold; 
+	text-decoration: none; 
+	color: grey;
+	}
+	
+a:hover, a:active { 
+	text-decoration: underline; 
+	color: #D40112;
+	}
+	
+acronym {
+	border-bottom: none;
+	}
+
+
+ul {
+	position:relative;
+	left:10%;
+}
+
+/* specific divs */
+#container { 
+	width:900px;
+	background: url(zen-bg.jpg) no-repeat top left; 
+	//padding: 0 175px 0 110px;  
+	margin-left: auto;
+	margin-right: auto; 
+	//position: relative;
+	background-color:white;
+	}
+
+#intro { 
+	//min-width: 470px;
+	height:500px;
+	}
+
+/* using an image to replace text in an h1. This trick courtesy Douglas Bowman, http://www.stopdesign.com/articles/css/replace-text/ */
+	
+//#pageheader{
+	width:90%;
+}	
+
+#pageHeader h1 { 
+	background: transparent url(h1.gif) no-repeat top left;  
+	margin-left:270px;
+	font-size: 2.5em;
+	width: 250px; 
+	height: 30px; 
+	margin-top:160px;
+	color: black;
+	}
+#pageHeader h1 span {
+	display:visible;
+	}
+#pageHeader h2 { 
+	background: transparent url(h2.gif) no-repeat top left; 
+	margin-left:260px; 
+	width: 250px; 
+	height: 18px; 
+	color:black;
+	font-size:1.5em;
+	font-style:italic;
+	}
+#pageHeader h2 span {
+	display:visible
+	}
+#pageHeader {
+	padding-top: 20px;
+	height: 250px;
+	background-image:url('japan_flag.jpg');
+	background-repeat: no-repeat;
+}
+
+#quickSummary {
+	//clear:both; 
+	//margin: 20px 20px 20px 10px; 
+	width: 100%; 
+	//float: left;
+	}
+#quickSummary p {
+	font: italic 10pt/22pt georgia; 
+	text-align:center;
+	}
+
+#preamble {
+	clear: both; 
+	padding: 0px 10px 0 10px;
+	background-color:white;
+	}
+#supportingText {	
+	padding-left: 10px; 
+	margin-top:80px;
+	margin-bottom: 40px;
+	float:left;
+	background-color:white;
+	}
+
+#footer { 
+	text-align: center; 
+	}
+#footer a:link, #footer a:visited { 
+	margin-right: 20px; 
+	}
+
+#linkList {
+	float:right; 
+	position:relative;
+	top:-1425px;
+	left:-20px;
+	background-image:url('map_japan.jpg');
+	background-size: 150px;
+	width:32%;
+	height:1350px;
+	}
+	
+#linkList2 { 
+	font: 10px verdana, sans-serif; 
+	background: transparent url(paper-bg.jpg) top left repeat-y;
+	position:absolute;
+	//position:relative;
+	top: -100px; right: 0px; 
+	margin-left: 70px; 
+	margin-top: 150px; 
+	width: 250px; 
+	background-color:rgba(0,0,0,.8);
+	border-radius:5px;
+	
+	
+	}
+
+#linkList h3.select { 
+	background: transparent url(h3.gif) no-repeat top left; 
+	margin-left: 10px; 
+	width: 200px; 
+	height: 16px; margin-left: 10px;
+	}
+	
+#linkList h3.select span {
+	display:visible;
+	margin-left: 10px;
+	}
+	
+#linkList h3.favorites { 
+	background: transparent url(h4.gif) no-repeat top left; 
+	margin: 25px 0 5px 0; 
+	width: 60px; 
+	height: 18px; 
+	background-color:blue;
+	}
+#linkList h3.favorites span {
+	display:none
+	}
+#linkList h3.archives { 
+	background: transparent url(h5.gif) no-repeat top left; 
+	margin: 25px 0 5px 0; 
+	width:200px; 
+	height: 14px; 
+	}
+#linkList h3.archives span {
+	display:visible	;
+	margin-left:10px;
+		font-size: 1.5em;
+	}
+#linkList h3.resources { 
+	background: transparent url(h6.gif) no-repeat top left; 
+	margin: 25px 0 5px 0; 
+	width:200px; 
+	height: 10px; 
+	
+	}
+#linkList h3.resources span {
+	display:visible;
+	color:white;
+	font-style:underline;
+	margin-left:10px;
+	font-size: 1.5em;
+	}
+
+
+#linkList ul {
+	margin-left: 10px;;
+	padding: 0;
+	}
+#linkList li {
+	line-height: 2.5ex; 
+	background: transparent url(cr1.gif) no-repeat top center; 
+	display: block; 
+	padding-top: 5px; 
+	margin-bottom: 5px;
+	list-style-type: none;
+	
+	}
+#linkList li a:link {
+	color: white;
+	}
+#linkList li a:visited {
+	color: #B3AE94;
+	}
+
+
+#extraDiv1 {
+	background: transparent url(cr2.gif) top left no-repeat; 
+	position: absolute; 
+	top: 40px; 
+	right: 0; 
+	width: 148px; 
+	height: 110px;
+	}
+.accesskey {
+	text-decoration: underline;
+	}

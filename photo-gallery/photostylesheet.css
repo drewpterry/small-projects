@@ -1,0 +1,68 @@
+#outercontainer {
+	width:900px;
+	//height:1000px;
+	//border-style:solid;
+	margin:auto;
+}
+
+h1 {
+	text-align:center;
+	//border-style:solid;
+	
+}
+
+
+#gallery {
+	width:200px;
+	//height:800px;
+	float:left;
+	//border-style:solid;
+	
+}
+
+//figure {
+	display:block;
+	width:150px;
+	margin-left:auto;
+	margin-right:auto;	
+	
+}
+.thumbnail{
+	display:block;
+	width:120px;
+	margin-left:auto;
+	margin-right:auto;
+	opacity: .5;
+	border-width:0px;
+	border-style:solid;	
+	
+}
+
+figcaption {
+	text-align:center;
+	//border-style:solid;
+	
+}
+
+.hidden {
+	display:none;
+	
+}
+
+#bigphoto {
+	
+	width:600px;
+	//border-style:solid;
+	float:left;
+	margin-left:50px;
+	margin-top:100px;
+	
+}
+
+.bigphoto{
+	
+	display:block;
+	width:500px;
+	margin-left:auto;
+	margin-right:auto;
+}

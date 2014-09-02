@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>Object Gallery</title>
+	
+	
+<style>
+	
+	
+header {
+	text-align:center;
+	
+}
+	
+.thumbnail {
+	height:100px;
+	width:100px;
+		
+}
+
+.picbox{
+	border-style:solid;
+	height:auto;
+	width:100px;
+	float:left;
+	text-align:center;
+	font-size: .8em;
+}
+
+
+	
+	
+</style>
+	
+	
+
+	<script src="jquery-2.0.3.min.js"></script>
+	   
+
+	
+</head>
+
+
+<body>
+	
+	<div id = "outercontainer">
+		<header>Travel Photo Gallery Search</header>
+		
+		
+		<input type = "text" id = "phrase" placeholder = "search here"></input><button id = "button">Search</button>
+		
+		
+		<div id = "gallery">
+			<div id = "picture1" class ="picbox">
+				<img class = "thumbnail" src = "images/photo1.jpg"/> <br/>
+				<caption>Hello</caption>
+			</div>
+			<div id = "picture2" class = "picbox">
+				<img class = "thumbnail" src = "images/photo2.jpg"/>
+					<caption>Hello</caption>
+			</div>
+				<img class = "thumbnail" src = "images/photo3.jpg"/>
+				<img class = "thumbnail" src = "images/photo4.jpg"/>
+				<img class = "thumbnail" src = "images/photo5.jpg"/>
+				<img class = "thumbnail" src = "images/photo6.jpg"/>
+				<img class = "thumbnail" src = "images/photo7.jpg"/>
+				<img class = "thumbnail" src = "images/photo8.jpg"/>
+				<img class = "thumbnail" src = "images/photo9.jpg"/>
+				<img class = "thumbnail" src = "images/photo10.jpg"/>
+			<br style = "clear:both;">
+		</div>
+		
+	</div>
+	
+	
+	
+		<script>
+	  
+	   
+		var picPaths = []; var tagwords = []; var captions = [];
+		picPaths[0] = "images/photo1.jpg"; tagwords[0] = "me, people, friends, China, Beijing";  		captions[0] = "Thanking our unnoficial tour guide.";
+		picPaths[1] = "images/photo2.jpg"; tagwords[1] = "me, people, friends, Hong Kong, technology";  captions[1] =  "Monica Lam at a Hong Kong tech talk.";
+		picPaths[2] = "images/photo3.jpg"; tagwords[2] = "me, Taiwan, landmarks";   						captions[2] = "Taipei.";
+		picPaths[3] = "images/photo4.jpg"; tagwords[3] = "me, friends, Japan, temple";   				captions[3] = "Japanese temple";
+		picPaths[4] = "images/photo5.jpg"; tagwords[4] = "food, sushi, Japan";   						captions[4] = "Raw shrimp sushi.";
+		picPaths[5] = "images/photo6.jpg"; tagwords[5] = "Buddha, Hong Kong, landmarks";  				captions[5] = "1 of 10,000 Buddhas.";
+		picPaths[6] = "images/photo7.jpg"; tagwords[6] = "food, Hong Kong";  							captions[6] = "I don't even remember.";
+		picPaths[7] = "images/photo8.jpg"; tagwords[7] = "food, fish, Thailand";  						captions[7] = "Thailand garlic fish.";
+		picPaths[8] = "images/photo9.jpg"; tagwords[8] = "Hong Kong, Chinese New Years";  				captions[8] = "Chinese New Year in Hong Kong.";
+		picPaths[9] = "images/photo10.jpg"; tagwords[9]= "China, Beijing, Great Wall, landmarks";  		captions[9] = "The Great Wall.";
+	
+	
+		var photos = [];
+		
+		// this is where created an array of objects
+		for (var i=0; i <picPaths.length; i++){
+			photos.push({
+				source: picPaths[i],
+				caption: captions[i],
+				tags: tagwords[i]
+			});
+		}
+	
+		$(document).ready(function(){
+			var content = '';
+			for (var i=0; i<picPaths.length; i++){
+				//content = content + i;
+			
+				content = content + "<div id = 'picture" + i +"' class ='picbox'>";
+				content = content + "<img class = 'thumbnail' src = '" + photos[i].source +"'/> ";
+				content = content + "<br/>";
+				content = content + "<caption>" + photos[i].caption + "</caption>";
+				content = content + "</div>";
+        	
+				document.getElementById('gallery').innerHTML = content;
+			}
+			
+			$("#button").on("click",function (){ 
+				
+				var searchValue = document.getElementById('phrase').value;
+				
+				
+				
+				for (var i = 0; i < photos.length; i++){
+				
+					$('#picture' + i).css({"border-color":"black",
+											"border-radius":"0px"});
+					
+					 if(searchValue == ''){
+ 						$('#picture' + i).css("border-color","black");
+						
+ 					}else if(photos[i].caption.toUpperCase().indexOf(searchValue.toUpperCase()) != -1  || photos[i].tags.toUpperCase().indexOf(searchValue.toUpperCase()) != -1){
+					
+						$('#picture' + i).css({"border-color":"green",
+												"border-radius": "10px",
+											});
+					
+					};	
+					
+				};
+				
+			});
+		
+		});
+	
+		  	
+	
+	   
+		</script>
+	
+	
+</body>
+</html>

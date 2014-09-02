@@ -1,0 +1,161 @@
+<html>
+<head>
+    <title>jQuery form object page -- start</title>
+</head>
+
+<body>
+
+
+<script src="http://code.jquery.com/jquery-1.11.0.js"></script>
+
+<script>
+
+    $(document).ready(function () {
+		
+		$("#b1").on("click", function(){
+			//var inputvalue = console.log(document.getElementById('firstname').value);
+			//console.log(inputvalue);
+			console.log($("input[type = 'text']").val());
+			
+			});
+			
+			$("#b2").on("click", function(){
+				$("input[type = 'text']").val("Patrick");
+			});
+			
+			$("#b3").on("click", function(){
+				console.log($("input[name = 'colors']:checked").val());
+				//console.log($("input[type = 'radio']:checked").attr("value"));
+			});
+			
+			$("#b3b").on("click", function(){
+				$("input[name = 'colors'][value = 'blue']").trigger("click");
+				
+			});
+			
+			$("#b3c").on("click", function(){
+				$("input[name = 'colors'][value = 'yellow']").trigger("click");
+				
+			});
+			
+			$("#b4").click(function(){
+				console.log($("select[name = 'animals']").val());
+			});
+			
+			$("#b4b").click(function(){
+				//this one is better
+				$("select[name = 'animals']").val("fish");
+				//$("option[value = 'fish']").attr('selected', true);
+				
+			})
+			
+			$("#b5").click(function(){
+				//$("input[name='likeshockey']").attr("checked", true);
+				
+				if($("input[name = 'likeshockey']:checked").length != 0){
+					console.log("the box is checked");
+				}else{
+					console.log("The box is not checked");
+				}
+				//console.log($("input[name = 'likeshockey']").val());
+			});
+		
+		});
+
+        /*
+         Some notes on css selectors with sub-attributes:
+         $("input") would target all html input tags/objects -- text boxes, radios, etc.
+         $("input[name='colors']") would target all input objects with a name of 'colors'
+         and
+         $("input[type='checkbox']") would target all input of type checkbox.
+         and
+         $("input[name='colors']:checked") would target the input of name colors that is checked
+         and
+         $("input[name='colors][value='blue]") would taget the input name colors that has a value of blue
+
+         */
+
+/*
+        $("#b2").on("click", function () {
+			$("input[type='text']")[0].value ="patrick";
+        });
+
+        $("#b3").on("click", function () {
+            console.log($("input[name='colors']:checked").val());
+        });
+
+        $("#b3b").on("click", function () {
+            //$("input[name='colors']:checked").attr("checked",false);
+            //$("input[name='colors'][value='blue']").attr("checked",true);
+            $("input[name='colors'][value='blue']").trigger("click");
+        });
+        $("#b3c").on("click", function () {
+            //$("input[name='colors'][value='yellow']").attr("checked",true);
+            $("input[name='colors'][value='yellow']").trigger("click");
+        });
+
+        $("#b4").on("click", function () {
+            console.log($("select[name='animals']").val());
+        });
+
+        $("#b4b").on("click", function () {
+            $("select[name='animals']").val("fish");
+        });
+
+
+
+        $("#b5").on("click", function () {
+            if($("input[name='likeshockey']").attr("checked")){
+                console.log("I Like Hocky is Checked");
+            }else{
+                console.log("I Like Hocky is not Checked");
+            }
+        });
+		*/
+
+  
+
+</script>
+<form>
+    <input type="text" value="Drew"/>
+	<input type="text" value="John"/>
+    <input type="button" value="Read value in box (this button has an ID='b1')" id="b1"/>
+    <input type="button" value="Put 'Patrick' in box (this button has an ID='b2')" id="b2"/>
+
+
+    <br/> <br/>
+
+    Radio buttons named "colors":<br/>
+    <input type="radio" name="colors" value="red"/>Red
+    <input type="radio" name="colors" value="blue"/>Blue
+    <input type="radio" name="colors" value="yellow"/>Yellow
+    <input type="radio" name="colors" value="green"/>Green
+    <input type="button" value="Read value in radios (this button has an ID='b3')" id="b3"/>
+    <input type="button" value="Set the 'blue' radio button to checked (this button has an ID='b3b')" id="b3b"/>
+    <input type="button" value="Set the 'yellow' radio button to checked (this button has an ID='b3c')" id="b3c"/>
+
+
+    <br/> <br/>
+
+    Drop-down named "animals":<br/>
+    <select name="animals" id="animals">
+        <option value="dog">Dog</option>
+        <option value="cat">Cat</option>
+        <option value="bird">Bird</option>
+        <option value="fish" >Fish</option>
+    </select>
+    <input type="button" value="Read value in select menu (this button has an ID='b4')" id="b4"/>
+    <input type="button" value="Set the 'fish' option to checked in the select menu (this button has an ID='b4b')"
+           id="b4b"/>
+
+    <br/> <br/>
+
+    Checkbox named "likeshockey":<br/>
+    <input type="checkbox" name="likeshockey"/>Yes I like Hockey
+    <input type="button" value="Read value in checkbox (this button has an ID='b5')" id="b5"/>
+
+    <br/> <br/>
+    <input type="reset" value="reset"/> <input type="submit" value="submit" />
+</form>
+</body>
+</html>

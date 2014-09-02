@@ -1,0 +1,111 @@
+body {
+	background-color:rgba(3,129,249,1);
+	font-family: sans-serif;
+	color:white;
+
+}
+
+footer, header {
+	background-color:orange;
+	width:800px;
+	margin:auto;
+	text-align:center;
+	font-size: 2em;
+}
+
+
+footer {
+	font-size: 1em;
+}
+
+#outercontainer {
+	
+	width:800px;
+	border-style:solid;
+	margin:auto;
+}
+
+#sidebar {
+	height:1000px;
+	width:30%;
+	background-image: url('tile.gif');
+	background-size: 200px auto;
+	float:left;	
+	//color:black;
+}
+
+#content{
+	height:1000px;
+	width:68%;
+	//background-color:green;
+	background-image:url("blacktile.gif");
+	float:left;
+	padding-left:5px;
+	padding-right:10px;
+}
+
+.contentphoto{
+	float:left;
+	margin-right:5px;
+	width:250px;
+}
+
+h2{
+	text-align:center;
+}
+
+aside{
+	height:200px;
+	width:200px;
+	float:right;
+	background-color:rgba(255,255,0,.8);
+	color:black;
+	margin-right:10px;
+	
+}
+
+.character {
+	height:250px;
+	width:220px;
+	//border-style:solid;
+	margin:auto;
+	
+}
+
+
+.name {
+	text-align:center;
+	
+}
+
+.photo{
+	height:150px;
+	display:block;
+	margin-left:auto;
+	margin-right:auto;
+		
+}
+
+
+.description{
+	font-size: .7em;
+	opacity:0;
+	-o-transition:1s;
+	  -ms-transition:1s;
+	  -moz-transition:1s;
+	  -webkit-transition:1s;
+	  /* ...and now for the proper property */
+	  transition:1s;
+	
+}
+
+.character:hover .description{
+	opacity: 1;
+}
+
+
+
+
+
+
+

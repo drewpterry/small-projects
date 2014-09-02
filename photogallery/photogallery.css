@@ -1,0 +1,51 @@
+#outercontainer {
+	width:950px;
+	border-color:black;
+	margin:auto;
+	
+
+}
+
+header {
+	text-align:center;
+	font-size:2em;
+	//border-style:solid;
+}
+
+#content{
+	width:100%;
+	height:400px;
+	margin-top:50px;
+	
+}
+
+figure {
+	width:500px;
+	margin:auto;
+	//border-style:solid;
+	text-align:center;
+}
+
+#mainphoto{
+	width:300px;
+}
+
+figcaption{
+	text-align:center;
+}
+
+
+
+#gallery{
+	width:100%;
+	//border-style:solid;
+	
+}
+
+.thumbnail{
+	height:80px;
+	float:left;
+	margin-left:15px;
+	
+	
+}

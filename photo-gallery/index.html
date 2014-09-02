@@ -1,0 +1,113 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<link href="photostylesheet.css" rel="stylesheet" type="text/css" />
+
+<title>My Trip - Photo Gallery</title>
+
+
+<!-- Link your jQuery Library first -->
+<script src="jquery-2.0.3.min.js"></script>
+
+<!-- Write your jQuery in the following script block -->
+<script>
+	
+		$(document).ready(function(){
+			
+			$(".thumbnail").hover(function(){
+							$(this).fadeTo(100,1);
+						},function(){
+							$(this).fadeTo(100,.5);
+						
+				
+						});
+	
+			/*$(".thumbnail").on("mouseover", function(){
+				$(this).fadeTo(100,1);
+				
+			});
+			
+			$(".thumbnail").on("mouseout", function(){
+				$(this).fadeTo(100,.5);
+				
+			}); */
+			
+			$(".thumbnail").on("click", function(){
+				$(".bigphoto").fadeOut(1000);
+				
+				 var src = $(this).attr("src");
+				window.setTimeout(function(){
+					$(".bigphoto").attr("src", src);
+				}, 1000);
+				$(".bigphoto").fadeIn(1000); 
+				
+				$("#change").html($(this).attr("caption"));
+				
+				$(".thumbnail").css("border-width","0px");
+				
+				$(this).css("border-width","5px");
+				
+		
+				
+				//$("#change")
+				
+			});
+			
+	
+		});
+	
+	
+</script>
+<style>
+	
+</style>
+</head>
+
+<body>
+	<div id = "outercontainer">
+		
+		<h1>Travels Abroad</h1>
+		<div id = "gallery">
+			<figure>
+				<img id = "photo1" class = "thumbnail" src = "images/photo1.jpg" caption = "With our guide Theresa!"/>
+			</figure>
+			
+			<figure>
+				<img id = "photo2" class = "thumbnail" src = "images/photo2.jpg" caption = "Monica Lam from Stanford speaking in HK"/>
+			</figure>
+			
+			<figure>
+				<img id = "photo3" class = "thumbnail" src = "images/photo3.jpg" caption = "Taipei!"/>
+			</figure>
+			
+			<figure>
+				<img id = "photo4" class = "thumbnail" src = "images/photo4.jpg" caption = "Japanese temple."/>
+				<figcaption class = "hidden" caption = "Japanese temple."></figcaption>
+			</figure>
+			
+			<figure>
+				<img id = "photo5" class = "thumbnail" src = "images/photo5.jpg" caption = "Sushi in Japan...this is raw shrimp."/>
+				<figcaption class = "hidden" caption = "Sushi in Japan...this is raw shrimp."></figcaption>
+			</figure>
+			
+			<figure>
+				<img id = "photo6" class = "thumbnail" src = "images/photo6.jpg" caption = "1 of 10,000 Buddhas."/>
+				<figcaption class = "hidden" caption = "1 of 10,000 Buddhas."></figcaption>
+			</figure>	
+		</div>
+		
+		
+		<div id = "bigphoto">
+			<figure>
+				<img class = "bigphoto" src = "images/photo1.jpg"/>
+				<figcaption id = "change">With our guide Theresa!</figcaption>
+			</figure>
+		</div>
+		
+		<br style = "clear:both">
+	</div>	
+</body>
+</html>

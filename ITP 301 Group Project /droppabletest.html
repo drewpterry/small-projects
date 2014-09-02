@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>jQuery UI Droppable - Default functionality</title>
+<!-- <link href="css/ui-lightness/jquery-ui-1.10.4.custom.css" rel="stylesheet"> -->
+<script src="js/jquery-1.10.2.js"></script>
+<script src="js/jquery-ui-1.10.4.custom.js"></script>
+  <!-- <link rel="stylesheet" href="/resources/demos/style.css"> -->
+  <style>
+  #draggable { 
+	  width: 100px; 
+	  height: 100px;
+	  padding: 0.5em; 
+	  float: left; 
+	  margin: 10px 10px 10px 0; 
+	  background-color:grey;
+	  float:left;
+  }
+  
+  .accept {
+	  height:100px;
+	  width:100px;
+	  background-color:green;
+	  float:left;
+  }
+  
+  #draggable2 { 
+	  width: 100px; 
+	  height: 100px;
+	  padding: 0.5em; 
+	  float: left; 
+	  margin: 10px 10px 10px 0;
+	  background-color:blue; 
+	  float:left;
+  }
+  
+  #droppable { 
+	  width: 150px; 
+	  height: 150px; 
+	  padding: 0.5em; 
+	  float: left; 
+	  margin: 10px; 
+	  background-color:yellow;
+  }
+  
+  #droppable2, #droppable3 { 
+	  width: 150px; 
+	  height: 150px; 
+	  padding: 0.5em; 
+	  float: left; 
+	  margin: 10px; 
+	  background-color:orange;
+  }
+  
+  .dropped {
+	  background-color:blue;
+  }
+  
+  #outercontainer {
+	  width:1000px;
+	  height:650px;
+	  margin:auto;
+	  border-style:solid;
+  }
+  
+  #header{
+	  width:1000px;
+	  height:100px;
+	  background-color:pink;
+  }
+  
+  </style>
+ 
+</head>
+<body>
+ 
+<div id = "outercontainer">
+	<div id = "header"></div>
+ 
+
+
+<div id="droppable2" class="ui-widget-header dropped">
+  <p>On over</p>
+</div>
+
+<div id="draggable" class="accept">
+  <p>Drag me to my target</p>
+</div>
+
+
+<div id="draggablea" class="accept">
+  <p>Drag me to my target</p>
+</div>
+
+<div id="draggableb" class="accept">
+  <p>Drag me to my target</p>
+</div>
+
+<div id="draggable2" class="ui-widget-content">
+  <p>Drag me to my target too</p>
+</div>
+
+
+
+
+ </div>
+ <script>
+ 
+ var items = 0;
+   
+  
+   $("#droppable2").draggable().droppable({
+     drop: function(event, ui) {
+       $(this).css("background-color","initial").find('p').html("dropped!");
+	   console.log(ui);
+	 if ((ui.draggable).hasClass("accept")){
+   $(ui.draggable).fadeOut();
+   items = items + 1;
+   console.log(items);
+	 	}else{
+ 			$(ui.draggable).html("I don't like this.")
+	  	}
+     }
+   });
+   
+   if(items =>5){
+   	
+   }
+   
+   $(".accept").draggable({
+	   revert:"invalid"
+   });
+   
+  
+   
+   
+   $( "#draggable2" ).draggable({
+	   //revert:"valid",
+	   revert:true
+   });
+   
+   
+
+ 
+ 
+ </script>
+</body>
+</html>

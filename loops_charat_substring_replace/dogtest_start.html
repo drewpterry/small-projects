@@ -1,0 +1,54 @@
+<html>
+<head>
+<title>Class Example</title>
+<script language="javascript">
+var imgPath = "http://webdev.usc.edu/itp301/dogs/";
+var imgName = new Array;
+imgName[0] = 'dogs01_s.jpg';
+imgName[1] = 'dogs02_s.jpg';
+imgName[2] = 'dogs03_s.jpg';
+imgName[3] = 'dogs04_s.jpg';
+imgName[4] = 'dogs05_s.jpg';
+imgName[5] = 'dogs06_s.jpg';
+imgName[6] = 'dogs07_s.jpg';
+imgName[7] = 'dogs08_s.jpg';
+imgName[8] = 'dogs09_s.jpg';
+imgName[9] = 'dogs10_s.jpg';
+imgName[10] = 'dogs11_s.jpg';
+
+var randNum = 0;
+var randomPic = function(){
+	
+	randNum = Math.floor(Math.random()*11);
+	
+	var content = "<img src = '" + imgPath + imgName[randNum] + "'/>";
+	
+	document.getElementById('randomPic').innerHTML = content;
+	
+	console.log(randNum);
+	
+}
+var showImages = function(){
+	var content = ""
+	for(var i=0; i<11; i++){
+		if(randNum != i){
+		content = content + "<img src = '" + imgPath + imgName[i] + "'/>";
+	}
+		console.log(content);
+		
+		document.getElementById("images").innerHTML = content;
+	}
+	
+}
+</script>
+</head>
+<body>
+<div id="randomPic">
+
+</div>
+<div id="images">
+
+</div>
+</body>
+	
+</html>

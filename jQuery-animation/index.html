@@ -1,0 +1,104 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>About My College</title>
+<!-- Link your jQuery Library first -->
+<script src="jquery-2.0.3.min.js"></script>
+
+<!-- Write your jQuery in the following script block -->
+<script>
+	
+		$(document).ready(function(){
+	
+			$(".content").hide();
+			
+			$("#history").on("mouseover", function(){
+				$("#history-content").slideDown(1000, function(){
+					$(this).css("color","green");
+				});
+			});
+			
+			$("#history").on("mouseout", function(){
+				$("#history-content").slideUp(1000);
+				});
+			
+			
+			$("#founders").on("click", function(){
+				$(this).next().slideToggle(500, function(){
+					$(this).css("background-color","yellow");
+				});
+			});
+			
+			
+			$("#olympic").on("click", function(){
+				$(this).next().slideToggle(1000, function(){
+					$(this).addClass("bluewhite");
+				});
+			});
+			
+			$("#armed-force").on("click", function(){
+				$(this).next().show();
+				});
+			
+			
+	
+		});
+	
+	
+</script>
+<style>
+	h1{
+		color: #FFCC00;
+		background: #990000;
+		text-align: center;
+		line-height: 50px;
+	}
+	h3 {
+		text-align:center;
+	}
+	#container{
+		margin:auto;
+		width: 950px;
+	}
+	
+	.bluewhite{
+		background-color:blue;
+		color:white;
+		font-style:italic;
+	}
+</style>
+</head>
+
+<body>
+<h1>About My College - USC</h1>
+<div id="container">
+	<h3 id="history" class="title">History</h3>
+	<div id="history-content" class="content">
+		<p>Los Angeles was a rough-and-tumble frontier town in the early 1870s, when a group of public-spirited citizens led by Judge Robert Maclay Widney first dreamed of establishing a university in the region. It took nearly a decade for this vision to become a reality, but in 1879 Widney formed a board of trustees and secured a donation of 308 lots of land from three prominent members of the community – Ozro W. Childs, a Protestant horticulturist; former California governor John G. Downey, an Irish-Catholic pharmacist and businessman; and Isaias W. Hellman, a German-Jewish banker and philanthropist. The gift provided land for a campus as well as a source of endowment, the seeds of financial support for the nascent institution.</p>
+		<p>When USC first opened its doors to 53 students and 10 teachers in 1880, the “city” still lacked paved streets, electric lights, telephones and a reliable fire alarm system. Today, USC is home to more than 33,000 students and nearly 3,200 full-time faculty, and is located in the heart of one of the biggest metropolises in the world. </p>
+	</div>
+	<h3 id="founders" class="title">The Era of the Founders</h3>
+	<div class="content">
+		<p>Los Angeles was a rough-and-tumble frontier town in the early 1870s, when a group of public-spirited citizens led by Judge Robert Maclay Widney first dreamed of establishing a university in the region. It took nearly a decade for this vision to become a reality, but in 1879 Widney formed a board of trustees and secured a donation of 308 lots of land from three prominent members of the community: Ozro W. Childs, a Protestant horticulturist; former California governor John G. Downey, an Irish-Catholic pharmacist and businessman; and Isaias W. Hellman, a German-Jewish banker and philanthropist. The gift provided land for a campus as well as a source of endowment — the seeds of financial support for the nascent institution.</p>
+	</div>
+	<h3 id="olympic" class="title">USC’s Olympic Heritage</h3>
+	<div class="content">
+		<p>USC’s participation in the Olympics dates back to 1904, when <strong>Emil Breitkreutz</strong>’06 traveled to St. Louis, becoming the first USC student to compete in the Olympic Games. Breitkreutz took home a bronze medal in the 800-meter run — marking the beginning of a Trojan Olympic legacy that today is unrivaled.</p>
+		<p>Since then, USC has produced more Olympians, overall medalists and gold medalists than any other university in the United States.</p>
+		<p><a href="http://grfx.cstv.com/photos/schools/usc/genrel/auto_pdf/2012-13/misc_non_event/usc-all-time-olympians.pdf" onclick="javascript:_gaq.push(['_trackEvent','download','http://grfx.cstv.com/photos/schools/usc/genrel/auto_pdf/2012-13/misc_non_event/usc-all-time-olympians.pdf']);" class="pdf">USC’s star-studded Olympic roster</a> includes 418 Trojans who attended the university before, during or after their Olympic appearances. These athletes have represented 60 countries and participated in 28 different sports, ranging from those generally associated with USC, such as track and swimming, to more unusual sports, such as team handball, canoeing and bobsled. While Trojans traditionally have found their place in the sun during the Summer Olympics, USC athletes also have competed in the Winter Olympics nine times.</p>
+	</div>
+	<h3 id="armed-force" class="title">Tradition of Support for the Armed Forces</h3>
+	<div class="content">
+		<p>USC has a long history of support for veterans and the military. The university became a training school for Army officers during World War I and expanded its role during World War II, serving as a naval preparatory flight cadet school and hosting Army, Marine Corps and Navy training programs.</p>
+		<p>In addition, USC is one of only two universities, along with Notre Dame, to have maintained an unbroken, decades-long relationship with the ROTC.</p>
+		<p>The ROTC program at USC was founded in 1943 and currently numbers 120 future officers in four branches of the military — the Air Force, Army, Marine Corps and Navy. Applicants must receive a scholarship from the national ROTC program and are admitted separately from other students at USC. Graduates of the program join their military branch as officers.</p>
+		<p>USC also enrolls approximately 600 veterans each semester, supporting their return to civilian life through the USC Veterans Association, the USC Veterans Certifying Office, Transfer and Veteran Student Programs, and other initiatives.</p>
+		<p>The Schoen Family Scholarship Program for Veterans Endowment, which has assisted close to 200 students since its creation in 1986, was established with a $15 million donation from USC Trustee William J. Schoen ’60, MBA ’63 and his wife, Sharon. This scholarship provides additional support for veterans studying at the USC Marshall School of Business and the USC Viterbi School of Engineering.</p>
+		<p>The university’s commitment to the military extends to other schools and units. For the last 12 years, USC has hosted the Institute for Creative Technologies, a leading center in artificial intelligence and virtual humans funded by the U.S. Department of Defense to improve training and preparedness of officers and their troops.</p>
+		<p>In 2008, the School of Social Work won federal funding to create a master’s program designed to train social workers specifically in the needs of veterans and their families. The school also runs the Center for Innovation and Research on Veterans &amp; Military Families.</p>
+		<p>In 2012, The USC Marshall School of Business launched the Master of Business for Veterans (MBV), a new degree program for veterans. Developed through conversations with Marshall alumni and the California Department of Veterans Affairs, the MBV is geared for veterans and active military personnel and is designed to translate specific skills acquired through military service to the business environment.</p>
+	</div>
+</div>
+</body>
+</html>

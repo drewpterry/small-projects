@@ -1,0 +1,100 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Function Lab</title>
+
+
+<script language="javascript">
+var imageInfo = function ()
+{
+// write a function that gathers all of the information about the image and outputs it to an alert box.
+// The final message should say "The image has a height of X and a width of Y and a border of Z".
+// The first part of the function has been written for you. You need to continue adding more values to the variable theinfo
+
+theinfo = "The image has a height of "
+theinfo = theinfo + document.getElementById('theimage').style.height
+theinfo = theinfo + " and width of "
+theinfo = theinfo +document.getElementById('theimage').style.width
+theinfo = theinfo + " and a border of "
+theinfo = theinfo + document.getElementById('theimage').style.borderWidth
+
+alert(theinfo)
+}
+
+
+
+var scaleImage = function (newwidth, newheight, newborder)
+{
+// this function has three parameters, meaning when it is called two pieces of information should be passed to it
+// the three arguments passed to it will be the width and height that the image should be scaled to
+var newwidth = document.getElementById("w").value
+var newheight = document.getElementById("h").value
+var newborder = document.getElementById("b").value
+// you should have three lines in this function. each line will set a new style property for the image: width, height and border
+
+// the name of the object is static (i.e. there is only one image on the page, so you can use that imagename as part of your calls)
+
+document.getElementById("theimage").style.width = newwidth
+
+//alert("hello")
+
+document.getElementById("theimage").style.height = newheight
+document.getElementById("theimage").style.borderWidth = newborder
+
+}
+
+
+
+
+</script>
+
+
+</head>
+
+<body>
+<div style="float:left;width:500px">
+<form id="form1" name="f1" method="post" action="">
+        <p>Image Scaling</p>
+        <p>
+          <label>Width
+          <input name="w" type="text" id="w" value = "" />
+          </label>
+        </p>
+        <p>
+          <label>
+          Height 
+          <input name="h" type="text" id="h" value = "" />
+          </label>
+        </p>
+        <p>
+          <label>
+          Border
+		  <input name="b" type="text" id="b" value = "" />
+          </label>
+        </p>
+        <p>
+          <label>
+			<!-- The below button needs to have an onClick trigger added that calls the scaleImage function. When that function is called it needs to include three arguments corresponding to width, height and border. The data for those arguments should come from the form fields. -->
+          <input type="button" name="Button" value="Scale Image" onClick = "scaleImage()"/>
+          </label>
+        </p>
+        <p>
+          <label>
+			<!-- The button below needs to have an onClick trigger added that calls the imageInfo function -->
+          <input  type="button" name="Button" onClick = "imageInfo()" value="Current Image Info" />
+          </label>
+        </p>
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
+      </form>
+      <p>&nbsp;</p>
+    <p>&nbsp;</p>
+  </div>
+  <div style="float:left;width:400px">
+<img name="theimage" id="theimage" src="familyguy6.jpg" style="width:320px; height:400px; border-width:2px; border-style:solid;" />
+</div>
+
+
+</body>
+</html>

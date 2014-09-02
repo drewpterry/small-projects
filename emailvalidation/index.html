@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Email Validation</title>
+	<meta charset="UTF-8">
+	<link href="" rel="stylesheet" type="text/css" />
+	<style></style>
+	<script type = "javascript/text"></script>
+	<script>
+	
+	
+	var validateemail = function(value){
+		
+		position = value.indexOf('@');
+		
+		if(value.indexOf('.',position) == -1 || position == -1 || value.indexOf('.')== -1){
+			alert("Please enter a valid email address.")
+		}else {
+			alert("Thanks, that is a valid email address.")
+		}
+		
+		
+	}
+	
+	
+	</script>
+	
+	
+</head>
+
+<body>
+	
+	
+	<input type = "text" id = "emailinput" placeholder = "type here" autofocus></input>
+	
+	<br/>
+	
+	<button onclick = "validateemail(document.getElementById('emailinput').value)">Validate Email</button>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+</body>
+<html>
